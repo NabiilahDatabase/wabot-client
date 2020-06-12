@@ -1,8 +1,11 @@
+import { PopupService } from './services/popup.service';
 import { Component, OnInit } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+import { FCM } from '@ionic-native/fcm/ngx';
 
 @Component({
   selector: 'app-root',
@@ -48,7 +51,9 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private fcm: FCM,
+    private popup: PopupService,
   ) {
     this.initializeApp();
   }
@@ -57,6 +62,15 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.fcm.subscribeToTopic('wabot');
+      this.fcm.onNotification().subscribe((data) => {
+        if (data.wasTapped) {
+          // Received in background
+        } else {
+          // Received in foreground
+          this.popup.showAlert(data.title, data.body);
+        }
+      });
     });
   }
 

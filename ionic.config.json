@@ -1,5 +1,8 @@
 {
   "name": "wabot-client",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,21 +1,96 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>
+      {{appName | uppercase}} Bot
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="startServer()" *ngIf="['inactive','auth'].includes((state | async))"
+      [disabled]="(state | async) === 'auth'">
+        START {{appName | uppercase}}
+      </ion-button>
+      <ion-button (click)="stopServer()" *ngIf="(state | async) === 'active'" color="light"
+      style="background-color: var(--ion-color-danger);">
+        STOP {{appName | uppercase}}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button *ngIf="(state | async) === 'active' && !sendMode" (click)="sendMode=true">
+        <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+      </ion-button>
+      <!-- <ion-button *ngIf="(state | async) === 'active' && !sendMode" (click)="gql.addAdmin(6281333908590)">
+        <ion-icon name="person-add" slot="icon-only"></ion-icon>
+      </ion-button> -->
+    </ion-buttons>
+    <ion-buttons slot="end"> 
+      <ion-button [disabled]="(state | async) === 'auth'" (click)="redeployServer()">
+        <ion-icon name="refresh" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button [disabled]="(state | async) !== 'active'" (click)="gql.getLogs()">
+        <ion-icon name="terminal-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list *ngIf="sendMode">
+    <ion-list-header>Kirim Pesan Whatsapp</ion-list-header>
+    <ion-buttons slot="end" style="position: absolute;right: 0;top: 0;">
+      <ion-button (click)="sendMode=false" color="primary">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-item>
+      <ion-input [(ngModel)]="to" placeholder="Nomor WA (dengan kode negara)" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea [(ngModel)]="text" placeholder="Isi Pesan"></ion-textarea>
+      <ion-button (click)="sendText()" color="primary"
+      [disabled]="!to || !text">
+        KIRIM
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-item-divider sticky style="padding:0">
+    <span style="margin:0 auto">
+      <span *ngIf="(state | async)==='inactive'">Whatsapp Bot {{appName | uppercase}} is Offline!</span>
+      <span *ngIf="(state | async)==='active'">Whatsapp Bot {{appName | uppercase}} is Online</span>
+      <span *ngIf="(state | async)==='auth'">
+        Authenticating Bot&nbsp;
+        <ion-spinner name="dots" style="vertical-align: middle;"></ion-spinner>
+      </span>
+      <span *ngIf="!qr && logs && (state | async)==='auth'" style="margin:0 auto">
+        {{logs[logs.length-1].desc}}&nbsp;
+        <ion-spinner name="dots" style="vertical-align: middle;"></ion-spinner>
+      </span>
+      <span *ngIf="qr && logs && (state | async)==='auth'" style="margin:0 auto">
+        <ion-img [src]="qr" style="padding: 10px;margin:0 auto"></ion-img>
+      </span>
+    </span>
+  </ion-item-divider>
+  <ion-list *ngIf="logs as logg">
+    <ion-item *ngFor="let log of logg | orderBy:'-time'">
+      <ion-label style="font-size: 13px;">
+        {{log.desc}}
+      </ion-label>
+      <ion-note slot="end" style="margin: 0;
+      padding: 5px 0 5px 15px;">
+        <b>{{log.time * 1000 | date: 'dd/MM'}}</b> {{log.time * 1000 | date: 'hh:mm'}}<br>
+        <span style="color: maroon;">[{{log.from}}]</span>
+      </ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary" style="height: 40px;">
+    <div style="padding-left: 15px;margin-top: -15px;">
+      {{appName | uppercase}} Bot Status: <b [class]="(state | async)">{{(state | async) | uppercase}}</b>
+    </div>
+  </ion-toolbar>
+</ion-footer>

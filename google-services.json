@@ -1,0 +1,222 @@
+{
+  "project_info": {
+    "project_number": "810283488124",
+    "firebase_url": "https://nabiilah-duit.firebaseio.com",
+    "project_id": "nabiilah-duit",
+    "storage_bucket": "nabiilah-duit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810283488124:android:b48acf5ce89a56c9778af9",
+        "android_client_info": {
+          "package_name": "com.nabiilah.bot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810283488124-aqoffrke5dgdhvkdus1gmp86168e8gqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGBiT_HchvrX_7NWxu8Z7kPlxusrH281c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810283488124-eq87g0t3jvv9h1so0j57kp0ad5sss020.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810283488124:android:2b527e9b7978e4bf778af9",
+        "android_client_info": {
+          "package_name": "com.nabiilah.bot1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810283488124-aqoffrke5dgdhvkdus1gmp86168e8gqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGBiT_HchvrX_7NWxu8Z7kPlxusrH281c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810283488124-eq87g0t3jvv9h1so0j57kp0ad5sss020.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810283488124:android:2bc1bc9b9f2a5874778af9",
+        "android_client_info": {
+          "package_name": "com.nabiilah.bot2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810283488124-aqoffrke5dgdhvkdus1gmp86168e8gqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGBiT_HchvrX_7NWxu8Z7kPlxusrH281c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810283488124-eq87g0t3jvv9h1so0j57kp0ad5sss020.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810283488124:android:974126eb85f8e40a778af9",
+        "android_client_info": {
+          "package_name": "com.nabiilah.bot3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810283488124-aqoffrke5dgdhvkdus1gmp86168e8gqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGBiT_HchvrX_7NWxu8Z7kPlxusrH281c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810283488124-eq87g0t3jvv9h1so0j57kp0ad5sss020.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810283488124:android:a8035a13f3c07a1f778af9",
+        "android_client_info": {
+          "package_name": "com.nabiilah.bot4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810283488124-aqoffrke5dgdhvkdus1gmp86168e8gqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGBiT_HchvrX_7NWxu8Z7kPlxusrH281c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810283488124-eq87g0t3jvv9h1so0j57kp0ad5sss020.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810283488124:android:24134adbe63f9211778af9",
+        "android_client_info": {
+          "package_name": "com.nabiilah.cs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810283488124-2bjmr9gg2pur93vk03k69lg9l5phnm2t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nabiilah.cs",
+            "certificate_hash": "1e5553be9b513758060f85baa3625a0a14624e02"
+          }
+        },
+        {
+          "client_id": "810283488124-aqoffrke5dgdhvkdus1gmp86168e8gqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGBiT_HchvrX_7NWxu8Z7kPlxusrH281c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810283488124-eq87g0t3jvv9h1so0j57kp0ad5sss020.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810283488124:android:58b23e9897301528778af9",
+        "android_client_info": {
+          "package_name": "com.nabiilah.gudang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810283488124-aqoffrke5dgdhvkdus1gmp86168e8gqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGBiT_HchvrX_7NWxu8Z7kPlxusrH281c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810283488124-eq87g0t3jvv9h1so0j57kp0ad5sss020.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
